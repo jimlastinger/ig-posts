@@ -6,7 +6,7 @@ TRAIL = '008'
 FOLLOWING = 'a $1,000 paycheck'
 SOURCES = ['https://www.irs.gov/taxtopics/tc751', 'https://www.ssa.gov/oact/cola/cbb.html']
 
-CAPTION = """On a $1,000 paycheck, $76.50 goes to Social Security and Medicare before income tax is even counted. Your employer quietly pays the same $76.50 again on top.
+CAPTION = """On a $1,000 paycheck, $76.50 goes to Social Security and Medicare, and that's before income tax. Your employer quietly pays the same $76.50 again on top.
 
 Data: IRS Topic No. 751 and Social Security Administration, 2026 tax rates and wage base.
 
