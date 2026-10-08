@@ -39,6 +39,17 @@ Pick a random minute inside each window each day (not on :00 or :30), keep the t
 15 minutes apart, and keep two posts on the same account at least 4 hours apart. If a window has already
 passed when the run starts, post that one 20 to 60 minutes from now instead.
 
+## Design rotation (approved by Jim, Oct 8 2026)
+Each account rotates through three looks by post number, so the grid doesn't repeat:
+| NNN mod 3 | @applied_stoic | @dollartrail |
+|---|---|---|
+| 0 | original (dark, bronze) | original (charcoal grid) |
+| 1 | `THEME = 'parchment'` (cream paper, oxblood accent) | `THEME = 'receipt'` (paper receipt, red totals) |
+| 2 | `THEME = 'bronze'` (solid bronze, black type) | `THEME = 'ledger'` (navy ledger, yellow highlights) |
+Set `THEME` near the top of the post file (omit it for the original). The look is defined in `tools/themes.py`
+as CSS overrides, so every helper in `tools/lib.py` works in every look. Check the preview as usual; colored
+chart segments must still read clearly on the light looks.
+
 ## Reels (calendar slots marked R)
 Instagram's licensed music can only be added in the app, so Reels are made silent and Jim posts them.
 Run `python tools/render.py posts/<account>/<file>.py --reel` on the named earlier post. That

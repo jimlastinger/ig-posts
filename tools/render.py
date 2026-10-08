@@ -8,6 +8,7 @@ Writes:  <account>/<NNN>/<slug>_01.jpg ...   (the hosted slides; commit + push t
 import sys, pathlib, importlib.util, subprocess, os
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from lib import FONT_CSS, STOIC_CSS, MONEY_CSS, stoic, money
+from themes import THEMES
 from playwright.sync_api import sync_playwright
 from PIL import Image
 
@@ -21,9 +22,13 @@ def load(path):
 
 def htmls(m):
     n = len(m.SLIDES)
+    theme = getattr(m, "THEME", "") or ""
+    extra = THEMES[m.ACCOUNT][theme] if theme and theme != "original" else ""
+    if extra:
+        print("theme:", theme)
     if m.ACCOUNT == "applied_stoic":
-        return STOIC_CSS, [stoic(i + 1, n, b, num) for i, (num, b) in enumerate(m.SLIDES)]
-    return MONEY_CSS, [money(m.TRAIL, m.FOLLOWING, i + 1, n, b) for i, b in enumerate(m.SLIDES)]
+        return STOIC_CSS + extra, [stoic(i + 1, n, b, num) for i, (num, b) in enumerate(m.SLIDES)]
+    return MONEY_CSS + extra, [money(m.TRAIL, m.FOLLOWING, i + 1, n, b) for i, b in enumerate(m.SLIDES)]
 
 def shoot(css, slides, prefix):
     out = []
@@ -54,7 +59,7 @@ def main():
     print("slides:", dest); print("preview:", prev)
     if "--reel" in sys.argv:
         rp = shoot(css + HIDE_FOOT, slides, str(tmp / ("reel_" + slug)))
-        bg = "#0c0b09" if m.ACCOUNT == "applied_stoic" else "#101214"
+        bg = {"parchment": "#efe7d6", "bronze": "#c9a35a", "receipt": "#e9e5da", "ledger": "#0d1726"}.get(getattr(m, "THEME", ""), "#0c0b09" if m.ACCOUNT == "applied_stoic" else "#101214")
         d = [3.0] + [4.5] * (len(rp) - 1)
         clips = []
         for i, (s, t) in enumerate(zip(rp, d)):

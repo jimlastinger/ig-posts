@@ -2,6 +2,7 @@ import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().par
 from lib import *
 
 ACCOUNT = 'applied_stoic'
+THEME = 'parchment'
 SOURCES = ['https://classics.mit.edu/Epictetus/epicench.html']
 
 CAPTION = """A stranger's comment can ruin your evening, but only if you agree with it. Epictetus said the sting comes from your own judgment, not the words.
