@@ -9,7 +9,7 @@ SOURCES = ['https://loudandclear.byspotify.com/',
            'https://loudandclear.byspotify.com/process/',
            'https://loudandclear.byspotify.com/payouts/']
 
-CAPTION = """Spotify doesn't pay a set price per stream. It paid the music industry more than $11 billion in 2025, split by each artist's share of all streams, and 1 in every million streams was worth over $11,000 on average.
+CAPTION = """Spotify doesn't pay a set price per stream. It paid the music industry more than $11 billion in 2025, split by each artist's share of all streams. Artists with 1 in every million streams generated over $11,000 on average.
 
 Data: Spotify, Loud & Clear (2025 royalty data).
 
