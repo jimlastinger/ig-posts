@@ -86,3 +86,6 @@ from Windsor's read connector `instagram_public`; if no data, pick the newest ca
 - Push refused: the Claude GitHub App must have access to jimlastinger/ig-posts.
 - Image URL not 200: wait 30 s and recheck; don't post broken URLs.
 - Never post the same carousel twice: check LOG.csv for the media ID before retrying a post.
+- An "Application request limit reached" error can still publish the post (it did on Oct 8). Before any retry,
+  list today's media with Windsor `get_data` (connector `instagram`, fields date, media_id, media_caption,
+  timestamp, `force_refresh`) and match the caption; if it's there, log that media ID instead of reposting.
