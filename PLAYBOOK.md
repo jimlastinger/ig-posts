@@ -16,7 +16,9 @@ Image URLs are raw GitHub URLs: `https://raw.githubusercontent.com/jimlastinger/
 ## Each day
 1. Read `CALENDAR.md` for today's four slots (2 per account) and `LOG.csv` for the next folder number
    (`NNN` per account) and the next dollartrail Trail No. (same as NNN). Never repeat a topic in LOG.csv.
-2. Research each post before writing it (see Research rules). If a topic can't be verified, swap in a
+2. Research each post before writing it (see Research rules). If `research/<YYYY-MM-DD>.md` exists for today, use it:
+   it holds quotes and figures verified in a live session (approved by Jim, Oct 9 2026, because scheduled runs can't
+   open web pages). Use only what's in it; see `research/README.md`. If a topic can't be verified, swap in a
    different topic from the backlog at the bottom of CALENDAR.md and note the swap in the summary.
 3. Write `posts/<account>/<NNN>-<slug>.py` using the helpers in `tools/lib.py`
    (study `posts/*/00[2-4]-*.py` for the structure and tone). Then `python tools/render.py <file>`.
@@ -59,7 +61,7 @@ re-renders slides into `<account>/<NNN>/` again (identical, harmless); don't com
 from Windsor's read connector `instagram_public`; if no data, pick the newest carousel that hasn't been a Reel.
 
 ## Research rules (non-negotiable)
-- Every number on a @dollartrail slide comes from an official or primary source fetched that day
+- Every number on a @dollartrail slide comes from an official or primary source fetched that day (or pre-verified in `research/`)
   (EIA, BLS, BEA, Census, CBO, Treasury, USDA ERS, FRB, CMS, SSA, company 10-Ks, NRF, etc.).
   Print the source on the hook slide (`.mini`) and the final slide (`.src`), and in the caption.
 - Use the latest full-period figure and say which period. Don't put a monthly number in a chart of

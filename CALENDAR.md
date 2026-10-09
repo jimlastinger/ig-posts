@@ -14,7 +14,7 @@ Slot 1 / Slot 2 refer to the posting windows in PLAYBOOK.md.
 | Thu 10/8 | C · Marcus 4.17: don't act as if you'll live ten thousand years (procrastination) | C · Epictetus on being insulted (the comment section) |
 | Fri 10/9 | C · Marcus 10.16: stop arguing what a good man should be; be one | C · Seneca's "practice poverty" weekend challenge (Letter 18) |
 | Sat 10/10 | C · Marcus's Book 1 gratitude list; write yours | R · from 004-difficult-people |
-| Sun 10/11 | C · Myth: "amor fati" isn't a Stoic phrase (who coined it) | C · Lifestyle creep: Seneca on wanting more |
+| Sun 10/11 | C · SWAP: Epictetus, want what happens (Ench. 8); amor fati source couldn't be verified | C · Lifestyle creep: Seneca on wanting more |
 | Mon 10/12 | C · Marcus 8.36: don't picture your whole life at once (overwhelm) | C · Seneca Letter 7: avoid the crowd (your group chat) |
 | Tue 10/13 | C · Epictetus: speak little, and only when needed (Enchiridion 33) | C · Marcus 4.3: the five-minute retreat into yourself |
 | Wed 10/14 | C · Seneca Letter 2: read a few books deeply | R · best performer of week 1 |
@@ -32,9 +32,9 @@ Slot 1 / Slot 2 refer to the posting windows in PLAYBOOK.md.
 | Thu 10/8 | C · One Spotify stream: what the artist gets | C · Your health insurance premium: the 80/20 rule |
 | Fri 10/9 | C · A $2 Powerball ticket (swapped: powerball.com unreadable; posted MLR 80/20 instead) | C · A new car's sticker price (swapped: sec.gov blocks fetch; posted Social Security tax instead) |
 | Sat 10/10 | C · Halloween: what Americans will spend this year (NRF) | R · from 004-electric-bill |
-| Sun 10/11 | C · A $100 pair of sneakers, followed | C · Your property tax bill: why schools get the most |
-| Mon 10/12 | C · A college credit hour: where tuition goes | C · An airline ticket: the taxes and fees in your fare |
-| Tue 10/13 | C · (6.2% Social Security tax posted early on 10/9 as 014; pick from backlog) | C · Concert tickets: the fee stack |
+| Sun 10/11 | C · SWAP: Heating your home this winter (EIA); sneakers needed sec.gov | C · SWAP: Interest on the national debt, FY2026 (CBO); Census tables blocked |
+| Mon 10/12 | C · A year of college: where the money goes (NCES; per-credit data not available) | C · An airline ticket: the taxes and fees in your fare |
+| Tue 10/13 | C · SWAP: Inflation 3.4%, but not for everything (BLS CPI Aug); SS tax posted 10/9 | C · SWAP: Who paid for the government, FY2026 (CBO); FTC page + Live Nation 10-K unavailable |
 | Wed 10/14 | C · Tips: where your 20% actually goes | R · best performer of week 1 |
 | Thu 10/15 | C · Social Security's 2027 raise (only if SSA has announced the COLA; else swap) | C · Hotel rooms: the taxes you pay that locals don't |
 | Fri 10/16 | C · Recap: 5 prices we followed and the most surprising cut | C · Sales tax: highest and lowest states |
