@@ -30,11 +30,11 @@ Slot 1 / Slot 2 refer to the posting windows in PLAYBOOK.md.
 | Tue 10/6 | C · A $100 prescription: list price vs. who pockets it | C · Who actually pays a tariff ($195B customs duties, FY2025, CBO) |
 | Wed 10/7 | C · A $28 hardcover: what the author gets | R · from 003-food-dollar |
 | Thu 10/8 | C · One Spotify stream: what the artist gets | C · Your health insurance premium: the 80/20 rule |
-| Fri 10/9 | C · A $2 Powerball ticket: prizes vs. the state | C · A new car's sticker price: who makes what |
+| Fri 10/9 | C · A $2 Powerball ticket (swapped: powerball.com unreadable; posted MLR 80/20 instead) | C · A new car's sticker price (swapped: sec.gov blocks fetch; posted Social Security tax instead) |
 | Sat 10/10 | C · Halloween: what Americans will spend this year (NRF) | R · from 004-electric-bill |
 | Sun 10/11 | C · A $100 pair of sneakers, followed | C · Your property tax bill: why schools get the most |
 | Mon 10/12 | C · A college credit hour: where tuition goes | C · An airline ticket: the taxes and fees in your fare |
-| Tue 10/13 | C · Your 6.2% Social Security tax: where it goes | C · Concert tickets: the fee stack |
+| Tue 10/13 | C · (6.2% Social Security tax posted early on 10/9 as 014; pick from backlog) | C · Concert tickets: the fee stack |
 | Wed 10/14 | C · Tips: where your 20% actually goes | R · best performer of week 1 |
 | Thu 10/15 | C · Social Security's 2027 raise (only if SSA has announced the COLA; else swap) | C · Hotel rooms: the taxes you pay that locals don't |
 | Fri 10/16 | C · Recap: 5 prices we followed and the most surprising cut | C · Sales tax: highest and lowest states |
