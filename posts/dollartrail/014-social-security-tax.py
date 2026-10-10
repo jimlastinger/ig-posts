@@ -18,7 +18,7 @@ Did you know the tax stops at $184,500 of earnings?
 #socialsecurity #taxes #paycheck #retirement #personalfinance #dollartrail"""
 
 SLIDES = [
-    '<div class=tag>Trail No. 014</div>\n<div class=hook style="font-size:96px">Your 6.2% Social Security tax isn&rsquo;t saved for you. <em>It pays someone today.</em></div>\n<div class=hook2>HereHere&rsquo;s where it went in 2025.rsquo;s the 2025 money trail.</div>\n<div class=mini style="margin-top:40px">Source: Social Security Administration, Office of the Chief Actuary; 2026 OASDI Trustees Report (calendar 2025 data).</div>',
+    '<div class=tag>Trail No. 014</div>\n<div class=hook style="font-size:96px">Your 6.2% Social Security tax isn&rsquo;t saved for you. <em>It pays someone today.</em></div>\n<div class=hook2>Here&rsquo;s the 2025 money trail.</div>\n<div class=mini style="margin-top:40px">Source: Social Security Administration, Office of the Chief Actuary; 2026 OASDI Trustees Report (calendar 2025 data).</div>',
     stack([(91, R, "PAYROLL TAXES"), (5, BL, ""), (4, Y, "")],
           [("Payroll taxes", "$1,323B", R), ("Interest", "$69B", BL), ("Tax on benefits", "$58B", Y)],
           "Social Security (OASDI) income, calendar 2025: $1,449B total. Shares: 91% / 5% / 4%. Parts don't add exactly due to SSA rounding.",
