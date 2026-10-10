@@ -22,8 +22,22 @@ Image URLs are raw GitHub URLs: `https://raw.githubusercontent.com/jimlastinger/
    different topic from the backlog at the bottom of CALENDAR.md and note the swap in the summary.
 3. Write `posts/<account>/<NNN>-<slug>.py` using the helpers in `tools/lib.py`
    (study `posts/*/00[2-4]-*.py` for the structure and tone). Then `python tools/render.py <file>`.
-4. Look at `_build/<account>-<NNN>-preview.png` with the Read tool. Fix any text overflow, wrapped
-   legend labels, overlapping footers, or slides that are too dense, and re-render until clean.
+   Edit post text with the Edit tool or Python, not `sed`: in a sed replacement an unescaped `&` pastes the
+   matched text back in, which is what garbled dollartrail 014's first slide on Oct 9.
+4. Proofread before anything is pushed (added Oct 10, 2026 after the 014 typo; Jim does not approve posts):
+   a. Text check: `render.py` runs `tools/lint.py` first and refuses to render a post with leftover HTML
+      (`rsquo;`), doubled words ("HereHere", "the the"), words jammed after punctuation, words not in the
+      dictionary, a post number on @applied_stoic, or a missing source line on @dollartrail. Fix the post and
+      re-render. Add a word to `tools/allow.txt` only if it's a real word or name you've confirmed is spelled right.
+      Never bypass the check or post slides from a failed render.
+   b. Read `_build/<account>-<NNN>-text.txt` (every slide's text + the caption) line by line, as a reader would.
+   c. Second reviewer: start a separate agent (Agent tool) that didn't write the post. Give it the text file, the
+      post file and today's `research/` file, and ask it to report, with slide numbers: typos and grammar, any
+      number, quote or citation that doesn't exactly match the research file, captions that don't match the
+      slides, and anything confusing. Fix every real issue, re-render and re-check. If it can't be fixed with
+      verified material, swap in a backlog topic. List what the reviewer caught in Jim's summary.
+   d. Look at `_build/<account>-<NNN>-preview.png` with the Read tool. Fix any text overflow, wrapped
+      legend labels, overlapping footers, or slides that are too dense, and re-render until clean.
 5. Commit and push the JPEGs and post files (`git pull --rebase` first). Verify every URL returns
    `200 image/jpeg` with curl before posting. GitHub's raw CDN can lag a few seconds after a push.
 6. Schedule each post at a jittered time inside its window (see Posting windows), then publish it at that time.

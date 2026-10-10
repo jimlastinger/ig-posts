@@ -1,0 +1,35 @@
+# Real words and names the dictionary doesn't know. One per line, lowercase.
+# Add a word here only after confirming it's spelled right (names: check the source).
+# Translators, authors, people
+tr
+gummere
+basore
+laertius
+arrian
+rusticus
+verus
+sextus
+liberalis
+citium
+# Archaic words inside public-domain translations
+risest
+ardour
+unpraised
+# Brands and sources
+spotify
+streamshare
+rightsholders
+politifact
+icloud
+# Common short forms and modern words
+app
+admin
+avg
+pre
+pref
+kwh
+dod
+midgrade
+premortem
+scaries
+café

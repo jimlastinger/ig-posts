@@ -1,7 +1,9 @@
 """Render a post file to Instagram-ready JPEGs (+ a preview sheet), optionally a silent Reel.
 
 usage: python tools/render.py posts/<account>/<NNN>-<slug>.py [--reel]
-Writes:  <account>/<NNN>/<slug>_01.jpg ...   (the hosted slides; commit + push these)
+First runs tools/lint.py (typos, leftover HTML, doubled words, account rules); a failing post is not rendered.
+Writes:  _build/<account>-<NNN>-text.txt      (plain text of every slide + caption, for a word-by-word read)
+  <account>/<NNN>/<slug>_01.jpg ...   (the hosted slides; commit + push these)
          _build/<account>-<NNN>-preview.png   (contact sheet, for checking; not committed)
          _build/<account>-<NNN>-reel.mp4      (with --reel: silent 9:16 video, no swipe/page footer)
 """
@@ -43,6 +45,13 @@ def shoot(css, slides, prefix):
 
 def main():
     post = pathlib.Path(sys.argv[1]).resolve(); m = load(post)
+    from lint import lint  # text check: refuse to render a post with typos or broken markup
+    errs = lint(post)
+    if errs:
+        print("TEXT CHECK FAILED, not rendering:"); [print("  " + e) for e in errs]
+        print("Fix the post file (or add a real word to tools/allow.txt) and run again.")
+        sys.exit(1)
+    print("text check: ok (plain text in _build/%s-%s-text.txt)" % (m.ACCOUNT, post.stem.split("-", 1)[0]))
     num, slug = post.stem.split("-", 1)
     assert 2 <= len(m.SLIDES) <= 10, "Instagram API carousels need 2-10 slides"
     css, slides = htmls(m)
