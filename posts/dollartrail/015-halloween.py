@@ -16,7 +16,7 @@ What's your costume this year?
 #halloween #halloween2026 #candy #costume #spending #dollartrail"""
 
 SLIDES = [
-    '<div class=tag>Trail No. 015</div>\n<div class=hook style="font-size:104px">Halloween 2026: $13.5 billion. <em>$115 a person.</em></div>\n<div class=hook2>Here&rsquo;s where the money goes.</div>\n<div class=mini style="margin-top:60px">Source: National Retail Federation 2026 Halloween survey (Prosper Insights &amp; Analytics, 7,889 consumers, Sept. 1-9, 2026). Expected spending.</div>',
+    '<div class=tag>Trail No. 015</div>\n<div class=hook style="font-size:104px">Halloween 2026: $13.5 billion. <em>$115 a person.</em></div>\n<div class=hook2>Here&rsquo;s where the money goes.</div>\n<div class=mini style="margin-top:60px">Source: National Retail Federation 2026 Halloween survey (Prosper Insights &amp; Analytics, 7,889 consumers, Sept. 1-9, 2026). Expected spending; $115.14 per person celebrating.</div>',
     stack([(32, R, "COSTUMES"), (32, Y, "DECOR"), (30, BL, "CANDY"), (6, P, "")],
           [("Costumes", "$4.4B", R), ("Decorations", "$4.3B", Y), ("Candy", "$4.1B", BL), ("Greeting cards", "$0.8B", P)],
           "Shares of category spending (our math). Categories sum to $13.6B; NRF&rsquo;s $13.5B total differs due to rounding.",
