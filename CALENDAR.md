@@ -19,7 +19,7 @@ Slot 1 / Slot 2 refer to the posting windows in PLAYBOOK.md.
 | Tue 10/13 | C · Epictetus: speak little, and only when needed (Enchiridion 33) | C · Marcus 4.3: the five-minute retreat into yourself |
 | Wed 10/14 | C · Seneca Letter 2: read a few books deeply | R · best performer of week 1 |
 | Thu 10/15 | C · Marcus 6.30: "Take care you are not made into a Caesar" (the promotion) | C · Epictetus on comparing yourself to others |
-| Fri 10/16 | C · Musonius Rufus: why the Stoics trained in discomfort | C · Recap: 5 Stoic habits from two weeks |
+| Fri 10/16 | C · SWAP: Seneca Letter 28, travel won't cure restlessness; no approved public-domain Musonius translation | C · Recap: 5 Stoic habits from two weeks |
 
 ## @dollartrail
 | Date | Slot 1 | Slot 2 |
@@ -36,8 +36,8 @@ Slot 1 / Slot 2 refer to the posting windows in PLAYBOOK.md.
 | Mon 10/12 | C · A year of college: where the money goes (NCES; per-credit data not available) | C · An airline ticket: the taxes and fees in your fare |
 | Tue 10/13 | C · SWAP: Inflation 3.4%, but not for everything (BLS CPI Aug); SS tax posted 10/9 | C · SWAP: Who paid for the government, FY2026 (CBO); FTC page + Live Nation 10-K unavailable |
 | Wed 10/14 | C · Tips: where your 20% actually goes | R · best performer of week 1 |
-| Thu 10/15 | C · Social Security's 2027 raise (only if SSA has announced the COLA; else swap) | C · Hotel rooms: the taxes you pay that locals don't |
-| Fri 10/16 | C · Recap: 5 prices we followed and the most surprising cut | C · Sales tax: highest and lowest states |
+| Thu 10/15 | C · SPARE: Social Security raises 2021-2026 (2027 COLA not announced as of Oct 12; don't state it) | C · Hotel rooms: the taxes on a $300 NYC night |
+| Fri 10/16 | C · Recap: 5 prices we followed and the most surprising cut | C · Sales tax: state rates, 7.25% to $0 (states we checked; not a 50-state ranking) |
 
 ## Backlog (use for swaps, or after 10/16)
 - Stoic: Seneca Letter 1 on time; Epictetus on what we can't control in relationships; Marcus 7.69
