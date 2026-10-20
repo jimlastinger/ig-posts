@@ -1,8 +1,13 @@
 # Pre-verified research
 
-Scheduled runs can't open web pages (WebFetch only opens links pasted into a live conversation), so Jim approved
-(Oct 9, 2026) doing the research ahead of time in a live session. Each file here holds the verbatim quotes and
-figures for one day, fetched from the listed primary source on the date shown.
+# Pre-verified research (optional)
+
+Scheduled runs can fetch sources themselves with WebFetch (confirmed Oct 20, 2026). WebFetch opens any URL written in
+the task instructions and pages linked from those; a URL that appears nowhere may be blocked. So list starting-point
+URLs for each approved domain in the task instructions, not just domain names.
+
+Files here are optional: use one when a day's sources can't be reached from those starting points. Each file holds
+the verbatim quotes and figures for one day, fetched from the listed primary source on the date shown.
 
 Rules for the run that uses a file:
 - Use ONLY the quotes and figures written here. Never add a number, quote, section ref or claim that isn't in the file.
