@@ -17,8 +17,7 @@ Image URLs are raw GitHub URLs: `https://raw.githubusercontent.com/jimlastinger/
 1. Read `CALENDAR.md` for today's four slots (2 per account) and `LOG.csv` for the next folder number
    (`NNN` per account) and the next dollartrail Trail No. (same as NNN). Never repeat a topic in LOG.csv.
 2. Research each post before writing it (see Research rules). If `research/<YYYY-MM-DD>.md` exists for today, use it:
-   it holds quotes and figures verified in a live session (approved by Jim, Oct 9 2026, because scheduled runs can't
-   open web pages). Use only what's in it; see `research/README.md`. If a topic can't be verified, swap in a
+   it holds quotes and figures verified in a live session. Use only what's in it; see `research/README.md`. Otherwise fetch sources with WebFetch: it opens URLs listed in the task instructions and pages linked from them.. If a topic can't be verified, swap in a
    different topic from the backlog at the bottom of CALENDAR.md and note the swap in the summary.
 3. Write `posts/<account>/<NNN>-<slug>.py` using the helpers in `tools/lib.py`
    (study `posts/*/00[2-4]-*.py` for the structure and tone). Then `python tools/render.py <file>`.
