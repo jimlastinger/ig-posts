@@ -17,7 +17,16 @@ Image URLs are raw GitHub URLs: `https://raw.githubusercontent.com/jimlastinger/
 1. Read `CALENDAR.md` for today's four slots (2 per account) and `LOG.csv` for the next folder number
    (`NNN` per account) and the next dollartrail Trail No. (same as NNN). Never repeat a topic in LOG.csv.
 2. Research each post before writing it (see Research rules). If `research/<YYYY-MM-DD>.md` exists for today, use it:
-   it holds quotes and figures verified in a live session. Use only what's in it; see `research/README.md`. Otherwise fetch sources with WebFetch: it opens URLs listed in the task instructions and pages linked from them.. If a topic can't be verified, swap in a
+   it holds quotes and figures verified in a live session. Use only what's in it; see `research/README.md`. Otherwise fetch sources with WebFetch, search-first (rule added Oct 26, 2026):
+   a. Before fetching any page, run a WebSearch that returns that page (e.g. `classics.mit.edu Meditations twelfth book "<phrase>"`),
+      then WebFetch the exact URL from the results. Pages fetched cold, even URLs listed in the task instructions, can stop
+      on an approval prompt that nobody answers in a scheduled run (meditations.6.six and 12.twelve did on Oct 26).
+   b. If the page doesn't show up in search, fetch an index page that did (e.g. `classics.mit.edu/Antoninus/meditations.html`)
+      and then follow its link to the page.
+   c. WebFetch only quotes about 120 characters at a time. To check a long quote, ask for the paragraph "in consecutive
+      verbatim excerpts under 120 characters, numbered" and rejoin them.
+   d. Write what you verified to `research/<YYYY-MM-DD>.md` so the second reviewer can check against it.
+   If a topic can't be verified, swap in a
    different topic from the backlog at the bottom of CALENDAR.md and note the swap in the summary.
 3. Write `posts/<account>/<NNN>-<slug>.py` using the helpers in `tools/lib.py`
    (study `posts/*/00[2-4]-*.py` for the structure and tone). Then `python tools/render.py <file>`.
