@@ -5,7 +5,7 @@ ACCOUNT = 'applied_stoic'
 THEME = 'parchment'
 SOURCES = ['https://classics.mit.edu/Antoninus/meditations.7.seven.html']
 
-CAPTION = """Marcus Aurelius told himself not to be troubled by what hasn't happened yet: when it comes, he will meet it with the same reason he uses today. Tonight, deal with today and let tomorrow wait for you.
+CAPTION = """Marcus Aurelius told himself not to be troubled by what hasn't happened yet: when it comes, he will meet it with the same reason he uses today. Deal with today, and let tomorrow wait for you.
 
 Source: Marcus Aurelius, Meditations 7.8, tr. George Long.
 
