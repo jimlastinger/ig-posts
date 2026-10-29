@@ -47,3 +47,5 @@ lb
 PACs
 usest
 favour
+Robusta
+Arabica
