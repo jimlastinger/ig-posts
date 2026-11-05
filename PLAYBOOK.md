@@ -131,3 +131,16 @@ from Windsor's read connector `instagram_public`; if no data, pick the newest ca
 - An "Application request limit reached" error can still publish the post (it did on Oct 8). Before any retry,
   list today's media with Windsor `get_data` (connector `instagram`, fields date, media_id, media_caption,
   timestamp, `force_refresh`) and match the caption; if it's there, log that media ID instead of reposting.
+
+## Daily comment picks (added Nov 5, 2026; separate scheduled task "IG comment picks")
+Goal: Jim spends about 5 minutes a day commenting from @applied_stoic and @dollartrail on fresh posts in each niche.
+- Watchlist: `WATCHLIST.md` (each handle must also be a tracked account in Windsor `instagram_public`).
+- Ranking: `python tools/comment_picks.py <rows.json>` picks up to 4 posts per niche: posted in the last 24 hours,
+  under 400 comments, fastest-moving for the account's size, one post per account.
+- For each pick, draft one comment Jim can paste or tweak: 1 to 2 sentences, about the post's actual point, adding one
+  specific thought, example or question. In the account's voice (calm and plain for Stoic; curious, numbers-minded for
+  Dollar Trail). No links, no "check out my page", no hashtags, no emojis, no flattery-only comments ("Great post!").
+  Never put a quote or number in a comment that hasn't been verified. If the caption is too thin to say something real,
+  drop that pick rather than write filler.
+- Instagram's API can't post comments on other accounts' posts, so Jim posts them in the app. Switch to the right
+  account first.
