@@ -47,3 +47,12 @@ Slot 1 / Slot 2 refer to the posting windows in PLAYBOOK.md.
 - Dollar Trail: bottled water; a wedding; a bottle of wine; an NFL ticket; a gym membership; a $1,000
   iPhone; a hospital stay; Netflix subscription; a home sale's closing costs; daycare; a ride-share fare;
   a bag of coffee beans; holiday spending (NRF, November); open enrollment premiums (November).
+
+## Backlog added Nov 5, 2026 (lean into what worked; see PLAYBOOK "What works")
+- Stoic, each opening on an everyday moment: a bad performance review; a friend who cancels on you again; waiting
+  for news you can't control; the group chat argument; comparing your life to someone's vacation photos;
+  the night before a big presentation; being passed over for a promotion; a rude customer.
+  (Pick a public-domain passage that fits from Marcus, Epictetus or Seneca; never reuse one already in LOG.csv.)
+- Dollar Trail, familiar brand-name purchases traced with the company's own SEC filing: a Chipotle burrito;
+  a Costco membership; an Uber ride; a Netflix price hike follow-up; a Domino's pizza; a Disney+ subscription;
+  a McDonald's meal; a pair of Nikes. If sec.gov can't be fetched that day, swap and list the URL needed.

@@ -14,8 +14,11 @@ params `{"image_urls": [...2-10 URLs in order...], "caption": "..."}`. The resul
 Image URLs are raw GitHub URLs: `https://raw.githubusercontent.com/jimlastinger/ig-posts/main/<account>/<NNN>/<file>.jpg`.
 
 ## Each day
-1. Read `CALENDAR.md` for today's four slots (2 per account) and `LOG.csv` for the next folder number
+1. Read `CALENDAR.md` for today's two slots (1 carousel per account; cut from 2 per account on Nov 5, 2026, approved by Jim) and `LOG.csv` for the next folder number
    (`NNN` per account) and the next dollartrail Trail No. (same as NNN). Never repeat a topic in LOG.csv.
+   Before researching anything new, check for built-but-unposted posts: a `posts/<account>/<NNN>-*.py` whose NNN has
+   no row in LOG.csv. Post the oldest one for that account first (re-read it and confirm its figures are still current),
+   then research a new topic only if there's none.
 2. Research each post before writing it (see Research rules). If `research/<YYYY-MM-DD>.md` exists for today, use it:
    it holds quotes and figures verified in a live session. Use only what's in it; see `research/README.md`. Otherwise fetch sources with WebFetch, search-first (rule added Oct 26, 2026):
    a. Before fetching any page, run a WebSearch that returns that page (e.g. `classics.mit.edu Meditations twelfth book "<phrase>"`),
@@ -53,15 +56,13 @@ Image URLs are raw GitHub URLs: `https://raw.githubusercontent.com/jimlastinger/
 8. Send Jim one short summary: what posted, when, media IDs, any swaps, plus any Reel files with captions.
 
 ## Posting windows (America/New_York)
-| | Slot 1 | Slot 2 |
+One carousel per account per day (since Nov 5, 2026). The old evening slots are retired.
+| | Weekdays | Weekends |
 |---|---|---|
-| @applied_stoic weekdays | 6:30 to 8:30 a.m. | 8:00 to 10:00 p.m. |
-| @applied_stoic weekends | 8:30 to 10:30 a.m. | 7:00 to 9:00 p.m. |
-| @dollartrail weekdays | 11:30 a.m. to 1:15 p.m. | 5:00 to 7:15 p.m. |
-| @dollartrail weekends | 10:00 a.m. to 12:00 p.m. | 4:00 to 6:00 p.m. |
-Pick a random minute inside each window each day (not on :00 or :30), keep the two accounts at least
-15 minutes apart, and keep two posts on the same account at least 4 hours apart. If a window has already
-passed when the run starts, post that one 20 to 60 minutes from now instead.
+| @applied_stoic | 6:30 to 8:30 a.m. | 8:30 to 10:30 a.m. |
+| @dollartrail | 11:30 a.m. to 1:15 p.m. | 10:00 a.m. to 12:00 p.m. |
+Pick a random minute inside each window each day (not on :00 or :30) and keep the two accounts at least
+15 minutes apart. If a window has already passed when the run starts, post that one 20 to 60 minutes from now instead.
 
 ## Design rotation (approved by Jim, Oct 8 2026)
 Each account rotates through three looks by post number, so the grid doesn't repeat:
@@ -74,8 +75,17 @@ Set `THEME` near the top of the post file (omit it for the original). The look i
 as CSS overrides, so every helper in `tools/lib.py` works in every look. Check the preview as usual; colored
 chart segments must still read clearly on the light looks.
 
-## Reels (calendar slots marked R)
+## Reels (every Monday and Thursday, one per account; added Nov 5, 2026)
+Performance check on Nov 5: in 113 carousels neither account had a single Reel live, saves were 0 and reach fell to
+1 or 2 accounts a day. Reels are how a small account reaches non-followers, so they are now a standing part of the run.
 Instagram's licensed music can only be added in the app, so Reels are made silent and Jim posts them.
+- On Mondays and Thursdays, build one Reel per account from its best carousel that isn't in `REELS.csv` yet
+  (rank by Windsor `instagram` media_reach, then media_shares, over the account's carousels).
+- Send both .mp4 files with SendUserFile AND send a PushNotification ("2 Reels ready to post: ...") so Jim actually
+  sees them; he missed earlier Reels sent only as files. Include a ready-to-paste caption for each in SendUserMessage.
+- Append each to `REELS.csv` (date_sent, account, from_num, slug, caption) and push.
+- On the next run, check Windsor for media_type REEL on each account. If a Reel sent 3+ days ago still isn't live,
+  remind Jim once in that run's PushNotification.
 Run `python tools/render.py posts/<account>/<file>.py --reel` on the named earlier post. That
 re-renders slides into `<account>/<NNN>/` again (identical, harmless); don't commit duplicates. Send the
 `_build/...-reel.mp4` to Jim with a ready-to-paste caption. Don't post Reels through Windsor.
@@ -95,6 +105,14 @@ from Windsor's read connector `instagram_public`; if no data, pick the newest ca
   Verify the exact wording against MIT Classics, Wikisource, Gutenberg or archive.org scans.
   Never post a quote you can't find in the primary text; many viral "Stoic quotes" are fake.
 - No AI images of real people. No fabricated claims, prices, or quotes. When in doubt, leave it out.
+
+## What works (Nov 5, 2026 performance check; steer topic choice by this)
+- @applied_stoic: the posts that reached the most people open on an everyday moment the reader has had: losing a
+  job, Sunday-night dread, 2 a.m. worry, a curt email, a difficult person. Start every hook from a situation like
+  that, then bring in the quote. Avoid hooks that open on the philosophy itself.
+- @dollartrail: the best performers follow a familiar brand-name purchase (a $5 Starbucks latte, a Spotify stream,
+  an AMC movie ticket). Prefer everyday things people buy, traced with the company's own SEC filing or official data.
+  Macro statistics (CBO, BEA, BLS releases) have reached almost no one; use them only when nothing better can be verified.
 
 ## Content rules
 - @applied_stoic: NO post numbers anywhere on the slides. 6-8 slides: hook, who's talking,
