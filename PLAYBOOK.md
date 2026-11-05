@@ -142,5 +142,7 @@ Goal: Jim spends about 5 minutes a day commenting from @applied_stoic and @dolla
   Dollar Trail). No links, no "check out my page", no hashtags, no emojis, no flattery-only comments ("Great post!").
   Never put a quote or number in a comment that hasn't been verified. If the caption is too thin to say something real,
   drop that pick rather than write filler.
+- Run every draft through the `humanizer` skill (rewrite mode) before sending, and keep only drafts that score 90+.
+  Watch for drafts in the same list that start or end the same way ("I'd love to...", "Curious..."); vary them.
 - Instagram's API can't post comments on other accounts' posts, so Jim posts them in the app. Switch to the right
   account first.

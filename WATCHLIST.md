@@ -6,6 +6,8 @@ The daily "IG comment picks" task reads their recent posts from Windsor `instagr
 (CreatorDB, Dash Social, Policygenius). Every handle here must also be added as a tracked account in Windsor's
 Instagram Public connector, or the task can't read it. Business discovery only works for business/creator accounts.
 
+Not usable in Windsor (checked Nov 5, 2026), so left out: pathsofstoicism, moneywithkatie.
+
 Edit freely: one handle per line under each heading, `#` starts a note. Remove an account that stops posting.
 
 ## stoic (comment as @applied_stoic)
@@ -38,4 +40,3 @@ nerdwallet
 usafacts              # official-data explainers, close to our angle
 ourworldindata
 marketplaceapm
-moneywithkatie        # activity uncertain
