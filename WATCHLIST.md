@@ -14,7 +14,6 @@ Edit freely: one handle per line under each heading, `#` starts a note. Remove a
 dailystoic            # anchor, 3.5M, Ryan Holiday
 ryanholiday           # anchor
 dailyphilosopher      # anchor, Holiday network
-pathsofstoicism
 stoicreflections
 astoicsfeed
 elevenstoic
