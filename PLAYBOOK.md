@@ -36,6 +36,12 @@ Image URLs are raw GitHub URLs: `https://raw.githubusercontent.com/jimlastinger/
    Edit post text with the Edit tool or Python, not `sed`: in a sed replacement an unescaped `&` pastes the
    matched text back in, which is what garbled dollartrail 014's first slide on Oct 9.
 4. Proofread before anything is pushed (added Oct 10, 2026 after the 014 typo; Jim does not approve posts):
+   0. Humanizer pass (added Nov 5, 2026, Jim's request): load the `humanizer` skill and run the caption and every
+      slide's own wording (hooks, headlines, body lines, trail notes, CTAs) through it in rewrite mode until each
+      scores 90+. Never change verbatim quotes, citations, figures, source lines or "(our math)" labels; it fixes voice,
+      not facts. Templated parts (the 3-step exercise slide, STOIC_FOLLOW, DT_FOLLOW) are fine as they are. Then
+      re-render, and give the second reviewer (step c) the humanized version. This also applies to a built-but-unposted
+      post before it goes out.
    a. Text check: `render.py` runs `tools/lint.py` first and refuses to render a post with leftover HTML
       (`rsquo;`), doubled words ("HereHere", "the the"), words jammed after punctuation, words not in the
       dictionary, a post number on @applied_stoic, or a missing source line on @dollartrail. Fix the post and
