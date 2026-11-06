@@ -11,7 +11,7 @@ CAPTION = """Ahead of Veterans Day: a veteran rated 100% disabled, with no depen
 
 Data: U.S. Department of Veterans Affairs, Veteran disability compensation rates (effective Dec. 1, 2025), va.gov; Social Security Administration 2027 COLA fact sheet. Yearly figure: our math.
 
-Did you know how VA ratings translate into dollars?
+Did you know what each VA rating pays?
 
 #veteransday #veterans #va #disability #money #dollartrail"""
 
@@ -30,6 +30,6 @@ SLIDES = [
          "The jump from 90% to 100% is $1,576.28 a month (our math).", BL),
     stop(4, 4, "Social Security&rsquo;s raise", "3.6%", "SOCIAL SECURITY COLA, STARTING WITH DECEMBER 2026 BENEFITS",
          ["VA says it&rsquo;s required by law to match Social Security&rsquo;s cost-of-living raise."],
-         "VA hadn&rsquo;t posted its new rate table as of Nov. 5, 2026.", P),
+         "VA hasn&rsquo;t posted its new rate table yet (checked Nov. 6, 2026).", P),
     '<div class=tag>End of the trail</div>\n<div class=hook style="font-size:86px">10%: $180.42.<br><em>100%: $3,938.58.</em></div>\n<div class=cta>Send this to a veteran<br>who <em>should know their numbers.</em></div>\n<div class=src>' + DT_FOLLOW + '<br><br>Source: U.S. Department of Veterans Affairs, veteran disability compensation rates, effective Dec. 1, 2025 (veteran alone, no dependents), va.gov; Social Security Administration, 2027 COLA fact sheet, ssa.gov. Yearly and difference figures: our math.</div>',
 ]
