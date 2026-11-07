@@ -15,12 +15,19 @@ import json, math, re, sys, argparse, pathlib, datetime as dt
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 
+PAUSED = []
+
 def watchlist():
     niches, cur = {}, None
     for line in (ROOT / "WATCHLIST.md").read_text().splitlines():
         m = re.match(r"##\s+(\w+)", line)
         if m:
-            cur = m.group(1).lower(); niches[cur] = []; continue
+            cur = m.group(1).lower()
+            if "paused" in line.lower():  # "## money (PAUSED ...)" skips the whole niche
+                PAUSED.append(cur); cur = None
+            else:
+                niches[cur] = []
+            continue
         h = line.split("#")[0].strip().lstrip("@").lower()
         if cur and h and re.fullmatch(r"[a-z0-9._]+", h):
             niches[cur].append(h)
@@ -44,7 +51,7 @@ def main():
     now = parse_ts(a.now) if a.now else dt.datetime.now(dt.timezone.utc)
     wl = watchlist()
     seen = {(r.get("profile_username") or "").lower() for r in rows}
-    out = {"missing": sorted(h for hs in wl.values() for h in hs if h not in seen)}
+    out = {"paused": PAUSED, "missing": sorted(h for hs in wl.values() for h in hs if h not in seen)}
     for niche, handles in wl.items():
         cands = []
         for r in rows:

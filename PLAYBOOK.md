@@ -150,5 +150,9 @@ Goal: Jim spends about 5 minutes a day commenting from @applied_stoic and @dolla
   drop that pick rather than write filler.
 - Run every draft through the `humanizer` skill (rewrite mode) before sending, and keep only drafts that score 90+.
   Watch for drafts in the same list that start or end the same way ("I'd love to...", "Curious..."); vary them.
+- Paused niches: a WATCHLIST heading containing PAUSED is skipped (the script lists it under "paused"). Don't pull
+  those handles from Windsor, leave that account's section out of the message, and count only active niches in the
+  notification. @dollartrail is paused as of Nov 7, 2026 (Instagram restriction); resume only when Jim says so, and
+  then start at 1 to 2 comments a day, spread out, not only on the biggest finance accounts.
 - Instagram's API can't post comments on other accounts' posts, so Jim posts them in the app. Switch to the right
   account first.

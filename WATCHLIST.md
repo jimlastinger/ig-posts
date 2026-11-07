@@ -25,7 +25,9 @@ stoicapp
 theeverydaystoic      # low activity
 donaldjrobertson      # low activity
 
-## money (comment as @dollartrail)
+## money (comment as @dollartrail) PAUSED
+# Paused Nov 7, 2026: Instagram restricted @dollartrail (scam-policy flag, DMs blocked until Dec 7) after a couple of
+# comments on big finance accounts. Jim asked to stop commenting from it. Delete the word PAUSED above to resume.
 morningbrew           # anchor, posts a lot
 cnbcmakeit            # anchor
 thefinancialdiet      # anchor
