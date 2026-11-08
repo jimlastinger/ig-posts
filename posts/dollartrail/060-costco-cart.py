@@ -6,7 +6,7 @@ TRAIL = '060'
 FOLLOWING = '$100 at Costco'
 SOURCES = ['https://www.sec.gov/Archives/edgar/data/0000909832/000090983226000093/cost-20260830.htm']
 
-CAPTION = """Spend $100 at Costco and, going by its latest annual report, $88.91 pays for the goods, $9.15 runs the warehouses and $1.94 is left over. Membership fees add $5.91 billion, about as much as the aisles leave over.
+CAPTION = """Spend $100 at Costco and, going by its latest annual report, $88.91 pays for the goods, $9.15 runs the warehouses and $1.94 is left over. On top of that, membership fees bring in $5.91 billion, a bit more than the $5.78 billion the aisles leave.
 
 Data: Costco Wholesale Form 10-K for fiscal 2026, year ended Aug. 30, 2026 (SEC filing). Company-wide shares of net sales applied to a $100 example cart; our math.
 
