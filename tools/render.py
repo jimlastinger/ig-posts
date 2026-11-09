@@ -68,7 +68,7 @@ def main():
     print("slides:", dest); print("preview:", prev)
     if "--reel" in sys.argv:
         rp = shoot(css + HIDE_FOOT, slides, str(tmp / ("reel_" + slug)))
-        bg = {"parchment": "#efe7d6", "bronze": "#c9a35a", "receipt": "#e9e5da", "ledger": "#0d1726"}.get(getattr(m, "THEME", ""), "#0c0b09" if m.ACCOUNT == "applied_stoic" else "#101214")
+        bg = {"parchment": "#efe7d6", "bronze": "#c9a35a", "marble": "#efede8", "fresco": "#7a231b", "journal": "#e8dfcb", "receipt": "#e9e5da", "ledger": "#0d1726"}.get(getattr(m, "THEME", ""), "#0c0b09" if m.ACCOUNT == "applied_stoic" else "#101214")
         d = [3.0] + [4.5] * (len(rp) - 1)
         clips = []
         for i, (s, t) in enumerate(zip(rp, d)):

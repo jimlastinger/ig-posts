@@ -31,6 +31,26 @@ FONT_CSS = "".join([
     _font("Mono", "jetbrains-mono-latin-400-normal.woff2", 400),
     _font("Mono", "jetbrains-mono-latin-700-normal.woff2", 700),
     _font("Anton", "anton-latin-400-normal.woff2", 400),
+    # added Nov 9, 2026 for the new @applied_stoic looks (all SIL Open Font License, from @fontsource on npm)
+    _font("Cinzel", "cinzel-latin-600-normal.woff2", 600),
+    _font("Cinzel", "cinzel-latin-700-normal.woff2", 700),
+    _font("Garamond", "eb-garamond-latin-500-normal.woff2", 500),
+    _font("Garamond", "eb-garamond-latin-600-normal.woff2", 600),
+    _font("Garamond", "eb-garamond-latin-700-normal.woff2", 700),
+    _font("Garamond", "eb-garamond-latin-500-italic.woff2", 500, "italic"),
+    _font("Garamond", "eb-garamond-latin-600-italic.woff2", 600, "italic"),
+    _font("Playfair", "playfair-display-latin-700-normal.woff2", 700),
+    _font("Playfair", "playfair-display-latin-800-normal.woff2", 800),
+    _font("Playfair", "playfair-display-latin-600-italic.woff2", 600, "italic"),
+    _font("Playfair", "playfair-display-latin-700-italic.woff2", 700, "italic"),
+    _font("Baskerville", "libre-baskerville-latin-400-normal.woff2", 400),
+    _font("Baskerville", "libre-baskerville-latin-700-normal.woff2", 700),
+    _font("Baskerville", "libre-baskerville-latin-400-italic.woff2", 400, "italic"),
+    _font("Typewriter", "special-elite-latin-400-normal.woff2", 400),
+    _font("SourceSerif", "source-serif-4-latin-400-normal.woff2", 400),
+    _font("SourceSerif", "source-serif-4-latin-600-normal.woff2", 600),
+    _font("SourceSerif", "source-serif-4-latin-700-normal.woff2", 700),
+    _font("SourceSerif", "source-serif-4-latin-400-italic.woff2", 400, "italic"),
 ])
 
 # ============================================================ APPLIED STOIC
