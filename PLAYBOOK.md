@@ -72,11 +72,13 @@ Pick a random minute inside each window each day (not on :00 or :30) and keep th
 
 ## Design rotation (approved by Jim, Oct 8 2026)
 Each account rotates through three looks by post number, so the grid doesn't repeat:
-| NNN mod 3 | @applied_stoic | @dollartrail |
+| NNN mod 3 | @applied_stoic (from 063, Nov 10, 2026) | @dollartrail |
 |---|---|---|
-| 0 | original (dark, bronze) | original (charcoal grid) |
-| 1 | `THEME = 'parchment'` (cream paper, oxblood accent) | `THEME = 'receipt'` (paper receipt, red totals) |
-| 2 | `THEME = 'bronze'` (solid bronze, black type) | `THEME = 'ledger'` (navy ledger, yellow highlights) |
+| 0 | `THEME = 'marble'` (white marble, lapis blue; Cinzel + EB Garamond) | original (charcoal grid) |
+| 1 | `THEME = 'fresco'` (Pompeian red, black frame, ochre; Playfair Display + Source Serif) | `THEME = 'receipt'` (paper receipt, red totals) |
+| 2 | `THEME = 'journal'` (grainy notebook paper, forest green; Libre Baskerville + typewriter labels) | `THEME = 'ledger'` (navy ledger, yellow highlights) |
+On Nov 9, 2026 Jim retired the original dark, parchment and bronze @applied_stoic looks for these three ("the feed is
+getting tired"). They still render for old posts and Reels, but don't use them for new posts.
 Set `THEME` near the top of the post file (omit it for the original). The look is defined in `tools/themes.py`
 as CSS overrides, so every helper in `tools/lib.py` works in every look. Check the preview as usual; colored
 chart segments must still read clearly on the light looks.
