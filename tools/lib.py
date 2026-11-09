@@ -97,3 +97,47 @@ def cmp(bars, labels):
     return f'<div class=cmp>{cols}</div><div class=xax>{ax}</div>'
 
 DT_FOLLOW = "Follow @dollartrail: we follow one price to the end, every day."
+
+# ============================================================ STOIC PORTRAITS (added Nov 9, 2026, Jim's request)
+# Slide 1 of an @applied_stoic post can carry a real portrait (ancient bust photo or old engraving) in the bottom
+# half, faded into the background like a vintage print. Images live in tools/portraits/ with their license in
+# tools/portraits/CREDITS.md. Public domain / CC0 only (or CC BY / BY-SA with the credit in the caption).
+# Never AI-generated faces. Usage in a post file:  ('I', '<div class=kick>...</div>...' + portrait('marcus-1'))
+PORTRAIT_CSS = """
+.s:has(.portrait){justify-content:flex-start;padding-top:150px}
+.s:has(.portrait) .hook{font-size:112px}
+.s:has(.portrait) .sub{font-size:56px;margin-top:30px}
+.portrait{position:absolute;left:50%;bottom:41px;transform:translateX(-50%);pointer-events:none;z-index:0}
+.s:has(.portrait) .kick,.s:has(.portrait) .rule,.s:has(.portrait) .hook,.s:has(.portrait) .sub{position:relative;z-index:1}
+.s:has(.portrait) .foot{z-index:2}
+"""
+STOIC_CSS = STOIC_CSS + PORTRAIT_CSS
+
+def portrait(name, height=720, width=900, fade_top=0.42, fade_side=0.18, tint=(112, 92, 62), focus=0.5):
+    """Bottom-half portrait for a stoic hook slide: name = file stem in tools/portraits/.
+    The photo is cropped to width x height (focus = horizontal crop centre, 0..1), toned to a sepia print and
+    faded out at the top and sides so it melts into any theme's background."""
+    import io
+    from PIL import Image, ImageOps
+    p = next((ROOT / "portraits" / f"{name}.{e}" for e in ("png", "jpg", "jpeg") if (ROOT / "portraits" / f"{name}.{e}").exists()), None)
+    if p is None:
+        raise FileNotFoundError(f"tools/portraits/{name}.(png|jpg) missing; see tools/portraits/CREDITS.md")
+    src = Image.open(p).convert("RGBA")
+    sc = max(width / src.width, height / src.height); src = src.resize((round(src.width * sc), round(src.height * sc)), Image.LANCZOS)
+    x0 = int(max(0, min(src.width - width, src.width * focus - width / 2))); src = src.crop((x0, src.height - height, x0 + width, src.height))
+    cut = src.getchannel("A")  # cut-out PNGs (tools/portraits/add.py) keep their own alpha; plain photos are opaque
+    im = src.convert("RGB")
+    g = ImageOps.autocontrast(ImageOps.grayscale(im), cutoff=1)
+    im = ImageOps.colorize(g, black=(18, 15, 11), white=(236, 226, 206), mid=tint)
+    a = Image.new("L", (width, height))
+    px = a.load()
+    for y in range(height):
+        vy = min(1.0, (y / height) / fade_top)
+        for x in range(width):
+            d = min(x, width - 1 - x) / width
+            px[x, y] = int(255 * vy * min(1.0, d / fade_side) ** 1.2)
+    from PIL import ImageChops
+    im.putalpha(ImageChops.multiply(a, cut))
+    buf = io.BytesIO(); im.save(buf, "PNG", optimize=True)
+    data = base64.b64encode(buf.getvalue()).decode()
+    return f'<img class=portrait width={width} height={height} src="data:image/png;base64,{data}">'

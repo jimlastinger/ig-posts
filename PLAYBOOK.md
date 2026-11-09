@@ -98,6 +98,28 @@ re-renders slides into `<account>/<NNN>/` again (identical, harmless); don't com
 "Best performer of week 1": pick the carousel with the most saves+shares (or likes if those are unavailable)
 from Windsor's read connector `instagram_public`; if no data, pick the newest carousel that hasn't been a Reel.
 
+## Portrait on @applied_stoic slide 1 (added Nov 9, 2026, Jim's request)
+Jim liked a quote account whose slide pairs the text with a vintage portrait (paper look, subject cut out and faded
+into the page). Slide 1 of every @applied_stoic post now carries a portrait of the Stoic being quoted, in the bottom
+half, under the hook. Other slides stay text-only.
+- Add it with `portrait('<name>')` from `tools/lib.py`, appended to slide 1's body:
+  `('I', '<div class=kick>...</div>...<div class=sub>...</div>' + portrait('marcus-1'))`. The hook shrinks to 112px
+  automatically; keep hooks to about 3 lines so they clear the image. Check the preview: the hook and sub must not
+  sit on the face.
+- Images come only from `tools/portraits/` (cut-out PNGs) and `CREDITS.md` there lists each license. Real portraits
+  only: photos of ancient busts or old engravings. Never AI-generated faces. Public domain / CC0 preferred; a CC BY or
+  CC BY-SA image needs "Photo: <author>, CC BY-SA" added to the caption above the hashtags.
+- Epictetus has no surviving ancient likeness; use an old engraving and never describe it as what he looked like.
+- Rotate images for the same Stoic (e.g. marcus-1, marcus-2) so consecutive posts don't repeat a face.
+- Building the library: Jim allowed upload.wikimedia.org and commons.wikimedia.org on Nov 9 (may take effect from the
+  next session). If `tools/portraits/` has no PNG for the Stoic you need, use the Commons API with curl
+  (`https://commons.wikimedia.org/w/api.php?action=query&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1600&titles=File:...`)
+  to find a clear, frontal or 3/4 bust photo, confirm `LicenseShortName` is Public domain / CC0 (or CC BY / BY-SA and
+  note the credit), download the 1600px thumb, then run `python tools/portraits/add.py <file> <name> "<who>" "<license>"
+  "<author>" "<file page URL>"` (installs: `pip install rembg onnxruntime --break-system-packages`). Look at the
+  cut-out with Read before using it; commit the PNG and the CREDITS line. Aim for 2 Marcus, 2 Seneca, 1 Epictetus.
+  If Wikimedia is still unreachable, post without a portrait and say so in Jim's summary (don't block the post).
+
 ## Research rules (non-negotiable)
 - Every number on a @dollartrail slide comes from an official or primary source fetched that day (or pre-verified in `research/`)
   (EIA, BLS, BEA, Census, CBO, Treasury, USDA ERS, FRB, CMS, SSA, company 10-Ks, NRF, etc.).
@@ -110,7 +132,7 @@ from Windsor's read connector `instagram_public`; if no data, pick the newest ca
   Hard and other modern translations are copyrighted, so never use them. Cite as "Author · Work ref · tr. Translator".
   Verify the exact wording against MIT Classics, Wikisource, Gutenberg or archive.org scans.
   Never post a quote you can't find in the primary text; many viral "Stoic quotes" are fake.
-- No AI images of real people. No fabricated claims, prices, or quotes. When in doubt, leave it out.
+- No AI images of real people (portraits on Stoic slide 1 are real bust photos or old engravings; see above). No fabricated claims, prices, or quotes. When in doubt, leave it out.
 
 ## What works (Nov 5, 2026 performance check; steer topic choice by this)
 - @applied_stoic: the posts that reached the most people open on an everyday moment the reader has had: losing a
