@@ -109,6 +109,10 @@ half, under the hook. Other slides stay text-only.
 - Images come only from `tools/portraits/` (cut-out PNGs) and `CREDITS.md` there lists each license. Real portraits
   only: photos of ancient busts or old engravings. Never AI-generated faces. Public domain / CC0 preferred; a CC BY or
   CC BY-SA image needs "Photo: <author>, CC BY-SA" added to the caption above the hashtags.
+- Library so far (Nov 9, from images Jim attached): `marcus-1` (armored bust, Toulouse; CC BY-SA 3.0, Pierre-Selim),
+  `marcus-2` (Glyptothek Munich; use `portrait('marcus-2', drop=0.28)` to trim the pedestal; license NOT yet confirmed,
+  so confirm on Commons before its first post), `seneca-1` (Berlin double herm; CC BY-SA 3.0, Marcus Cyron).
+  For a CC BY-SA image add this line above the hashtags: `Bust photo: <author>, CC BY-SA 3.0 (cropped and toned).`
 - Epictetus has no surviving ancient likeness; use an old engraving and never describe it as what he looked like.
 - Rotate images for the same Stoic (e.g. marcus-1, marcus-2) so consecutive posts don't repeat a face.
 - Building the library: Jim allowed upload.wikimedia.org and commons.wikimedia.org on Nov 9 (may take effect from the

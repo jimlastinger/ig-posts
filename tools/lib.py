@@ -104,39 +104,47 @@ DT_FOLLOW = "Follow @dollartrail: we follow one price to the end, every day."
 # tools/portraits/CREDITS.md. Public domain / CC0 only (or CC BY / BY-SA with the credit in the caption).
 # Never AI-generated faces. Usage in a post file:  ('I', '<div class=kick>...</div>...' + portrait('marcus-1'))
 PORTRAIT_CSS = """
-.s:has(.portrait){justify-content:flex-start;padding-top:150px}
-.s:has(.portrait) .hook{font-size:112px}
-.s:has(.portrait) .sub{font-size:56px;margin-top:30px}
-.portrait{position:absolute;left:50%;bottom:41px;transform:translateX(-50%);pointer-events:none;z-index:0}
+.s:has(.portrait){justify-content:flex-start;padding-top:130px}
+.s:has(.portrait) .rule{margin-bottom:36px}
+.s:has(.portrait) .hook{font-size:96px !important}
+.s:has(.portrait) .sub{font-size:46px !important;margin-top:24px}
+.portrait{position:absolute;left:50%;bottom:118px;transform:translateX(-50%);pointer-events:none;z-index:0}
 .s:has(.portrait) .kick,.s:has(.portrait) .rule,.s:has(.portrait) .hook,.s:has(.portrait) .sub{position:relative;z-index:1}
 .s:has(.portrait) .foot{z-index:2}
 """
 STOIC_CSS = STOIC_CSS + PORTRAIT_CSS
 
-def portrait(name, height=720, width=900, fade_top=0.42, fade_side=0.18, tint=(112, 92, 62), focus=0.5):
+def portrait(name, height=560, width=900, drop=0.0, focus=0.5, fade_top=0.42, fade_side=0.18, tint=(112, 92, 62)):
     """Bottom-half portrait for a stoic hook slide: name = file stem in tools/portraits/.
-    The photo is cropped to width x height (focus = horizontal crop centre, 0..1), toned to a sepia print and
-    faded out at the top and sides so it melts into any theme's background."""
+    Cut-out PNGs (made by tools/portraits/add.py) are fitted to `height`, sitting on the bottom edge; `drop` trims
+    that share of the image off the bottom (e.g. 0.25 to lose a pedestal). Plain photos are cropped to fill and faded
+    at the top and sides. Either way the image is toned to a sepia print to match every theme."""
     import io
-    from PIL import Image, ImageOps
+    from PIL import Image, ImageOps, ImageChops
     p = next((ROOT / "portraits" / f"{name}.{e}" for e in ("png", "jpg", "jpeg") if (ROOT / "portraits" / f"{name}.{e}").exists()), None)
     if p is None:
         raise FileNotFoundError(f"tools/portraits/{name}.(png|jpg) missing; see tools/portraits/CREDITS.md")
     src = Image.open(p).convert("RGBA")
-    sc = max(width / src.width, height / src.height); src = src.resize((round(src.width * sc), round(src.height * sc)), Image.LANCZOS)
-    x0 = int(max(0, min(src.width - width, src.width * focus - width / 2))); src = src.crop((x0, src.height - height, x0 + width, src.height))
-    cut = src.getchannel("A")  # cut-out PNGs (tools/portraits/add.py) keep their own alpha; plain photos are opaque
-    im = src.convert("RGB")
-    g = ImageOps.autocontrast(ImageOps.grayscale(im), cutoff=1)
+    is_cut = src.getchannel("A").getextrema()[0] < 250
+    if is_cut:
+        h = round(height / (1 - drop)); w = round(src.width * h / src.height)
+        src = src.resize((w, h), Image.LANCZOS)
+        canvas = Image.new("RGBA", (max(width, w), height), (0, 0, 0, 0))
+        canvas.paste(src, ((canvas.width - w) // 2, 0)); src = canvas; width = canvas.width
+    else:
+        sc = max(width / src.width, height / src.height); src = src.resize((round(src.width * sc), round(src.height * sc)), Image.LANCZOS)
+        x0 = int(max(0, min(src.width - width, src.width * focus - width / 2))); src = src.crop((x0, src.height - height, x0 + width, src.height))
+    cut = src.getchannel("A")
+    g = ImageOps.autocontrast(ImageOps.grayscale(src.convert("RGB")), cutoff=1)
     im = ImageOps.colorize(g, black=(18, 15, 11), white=(236, 226, 206), mid=tint)
-    a = Image.new("L", (width, height))
-    px = a.load()
+    a = Image.new("L", (width, height)); px = a.load()
     for y in range(height):
-        vy = min(1.0, (y / height) / fade_top)
         for x in range(width):
-            d = min(x, width - 1 - x) / width
-            px[x, y] = int(255 * vy * min(1.0, d / fade_side) ** 1.2)
-    from PIL import ImageChops
+            if is_cut:   # soft bottom edge only
+                v = min(1.0, (height - 1 - y) / (height * 0.16))
+            else:
+                v = min(1.0, (y / height) / fade_top) * min(1.0, (min(x, width - 1 - x) / width) / fade_side) ** 1.2
+            px[x, y] = int(255 * v)
     im.putalpha(ImageChops.multiply(a, cut))
     buf = io.BytesIO(); im.save(buf, "PNG", optimize=True)
     data = base64.b64encode(buf.getvalue()).decode()
