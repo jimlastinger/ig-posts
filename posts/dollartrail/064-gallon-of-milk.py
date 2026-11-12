@@ -7,7 +7,7 @@ TRAIL = '064'
 FOLLOWING = 'A $3.98 gallon of milk'
 SOURCES = ['https://www.ers.usda.gov/data-products/charts-of-note/112769', 'https://ers.usda.gov/data-products/price-spreads-from-farm-to-consumer/highlights-and-interactive-charts']
 
-CAPTION = """A gallon of whole milk averaged $3.98 at the store in 2024, and the dairy farm's share was $1.97 of it. The other $2.01 paid for everything after the farm gate, all the way to checkout.
+CAPTION = """In 2024, USDA put the retail price of a gallon of whole milk at $3.98, and the dairy farm's share was $1.97 of it. The other $2.01 paid for everything after the farm gate, all the way to checkout.
 
 Data: USDA Economic Research Service, Chart of Note on whole milk (June 17, 2025) and Price Spreads from Farm to Consumer (Cheddar).
 
