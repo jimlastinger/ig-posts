@@ -89,11 +89,20 @@ Performance check on Nov 5: in 113 carousels neither account had a single Reel l
 Instagram's licensed music can only be added in the app, so Reels are made silent and Jim posts them.
 - On Mondays and Thursdays, build one Reel per account from its best carousel that isn't in `REELS.csv` yet
   (rank by Windsor `instagram` media_reach, then media_shares, over the account's carousels).
-- Send both .mp4 files with SendUserFile AND send a PushNotification ("2 Reels ready to post: ...") so Jim actually
-  sees them; he missed earlier Reels sent only as files. Include a ready-to-paste caption for each in SendUserMessage.
+- EMAIL THE REELS (Jim's request, Nov 13, 2026: he misses Reels sent only as files and notifications). Copy each .mp4 to
+  `reels/<account>-<NNN>-<slug>.mp4`, commit and push, and check each
+  `https://raw.githubusercontent.com/jimlastinger/ig-posts/main/reels/<file>.mp4` returns 200. Then send ONE email to
+  Jim's own Gmail address (the account owner; Gmail connector `send_message`), subject
+  "Reels to post: @applied_stoic + @dollartrail (<date>)", body: per Reel the account, the download link and the
+  ready-to-paste caption, plus a reminder line for any older Reel still not live. Attach the .mp4 files too if the
+  Gmail tool accepts attachments; the links are the fallback. If Gmail is unavailable, put the links and captions in
+  the PushNotification body instead (its full text is emailed) and say Gmail failed.
+- Also send both .mp4 files with SendUserFile, the captions with SendUserMessage, and a PushNotification
+  ("2 Reels ready to post, emailed to you: ...").
 - Append each to `REELS.csv` (date_sent, account, from_num, slug, caption) and push.
 - On the next run, check Windsor for media_type REEL on each account. If a Reel sent 3+ days ago still isn't live,
-  remind Jim once in that run's PushNotification.
+  remind Jim once in that run's PushNotification, and in the Reels email if one goes out that day (with the
+  existing `reels/` download links).
 Run `python tools/render.py posts/<account>/<file>.py --reel` on the named earlier post. That
 re-renders slides into `<account>/<NNN>/` again (identical, harmless); don't commit duplicates. Send the
 `_build/...-reel.mp4` to Jim with a ready-to-paste caption. Don't post Reels through Windsor.
