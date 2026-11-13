@@ -7,7 +7,7 @@ TRAIL = '065'
 FOLLOWING = 'A $24.99 gym membership'
 SOURCES = ['https://www.sec.gov/Archives/edgar/data/1637207/000163720726000011/plnt-20251231.htm']
 
-CAPTION = """Your $24.99 Planet Fitness Black Card, followed: at a franchised club paying the current 7% royalty, $1.75 goes to Planet Fitness as a royalty, $2.25 goes to national and local ads, and $20.99 stays with the club to pay for everything else.
+CAPTION = """Your $24.99 Planet Fitness Black Card, followed: at a franchised club paying the current 7% royalty, $1.75 goes to Planet Fitness, $2.25 goes to national and local ads, and $20.99 stays with the club to pay for everything else.
 
 Data: Planet Fitness, Inc. 2025 Form 10-K (SEC filing): Black Card price, royalty rate and 2026 ad contribution rates applied to one month; our math.
 
